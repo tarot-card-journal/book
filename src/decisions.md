@@ -3,7 +3,7 @@
 ## Tech Stack
 
 - Flutter iPhone and Android app.
-- Rust backend proxy service for holding API secrets.
+- Rust backend proxy service for holding API secrets. (maybe?)
 
 ## User Data
 
@@ -47,6 +47,11 @@ send requests otherwise we might be charged for unauthorized usage.
 [Firebase App Check][1] is a solution that abstracts Apple's DeviceCheck and 
 Google's Play Integrity.
 
+## Firebase AI
+
+An alternative to the backend proxy is to use Firebase AI and the flutter
+plugin [`flutter_ai_toolkit`][9]. This handles client authentication for us.
+
 [1]: https://firebase.google.com/docs/app-check "Firebase App Check"
 [2]: https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them "OpenAI Tokens"
 [3]: https://ai.google.dev/gemini-api/docs/tokens?lang=python "Google Gemini Tokens"
@@ -55,3 +60,4 @@ Google's Play Integrity.
 [6]: https://pub.dev/packages/icloud_storage_sync "Flutter iCloud Storage Sync"
 [7]: https://pub.dev/packages/google_sign_in "Flutter Google Sign In"
 [8]: https://pub.dev/packages/googleapis "Flutter Google APIs"
+[9]: https://pub.dev/packages/flutter_ai_toolkit "Flutter AI Toolkit"
