@@ -1,5 +1,27 @@
 # Architecture Decisions
 
+## Tech Stack
+
+- Flutter iPhone and Android app.
+- Rust backend proxy service for holding API secrets.
+
+## User Data
+
+For security and simplicity we do not want to store user data or have user
+accounts.
+However, we must allow users to easily migrate from one device to another.
+
+Google and Apple provide features for doing this and there is built in Flutter
+tooling for using those services.
+For apple it is called CloudKit and for android it is the Google Drive AppData.
+In Flutter you can use [`icloud_storage`][5] or [`icloud_storage_sync`][6] for 
+iPhone and [`google_sign_in`][7] and [`googleapis`][8] to store app data.
+
+This will not allow users to migrate between an iPhone and Google device as
+their data will be tied to their Apple or Google account.
+This is fine because we are also using the app stores of each ecosystem and
+there is no good way to transfer a paid app from one to the other.
+
 ## AI Costs
 
 AI costs are measured in tokens.
@@ -29,3 +51,7 @@ Google's Play Integrity.
 [2]: https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them "OpenAI Tokens"
 [3]: https://ai.google.dev/gemini-api/docs/tokens?lang=python "Google Gemini Tokens"
 [4]: https://ai.google.dev/gemini-api/docs/pricing "Google Gemini Pricing"
+[5]: https://pub.dev/packages/icloud_storage "Flutter iCloud Storage"
+[6]: https://pub.dev/packages/icloud_storage_sync "Flutter iCloud Storage Sync"
+[7]: https://pub.dev/packages/google_sign_in "Flutter Google Sign In"
+[8]: https://pub.dev/packages/googleapis "Flutter Google APIs"
