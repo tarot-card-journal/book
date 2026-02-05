@@ -1,4 +1,5 @@
 # Summary
 
-- [Architecture Decisions](./decisions.md)
+- [Product](./product.md)
 - [Tarot Cards](./tarot.md)
+- [Architecture Decisions](./decisions.md)
